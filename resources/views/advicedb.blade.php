@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-    <title>GeeksforGeeks</title> 
+    <title>adviceDB</title> 
     <style> 
         div { 
             font-size: 22px; 
