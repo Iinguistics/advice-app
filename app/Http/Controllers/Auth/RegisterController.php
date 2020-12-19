@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
+    public function __construct(){
+        $this->middleware(['guest']);
+    }
+
+
     public function index(){
         return view('auth.register');
     }
@@ -30,7 +35,10 @@ class RegisterController extends Controller
           'password' => Hash::make($request->password),
        ]);
 
-       //sign in
+       //sign in    can use the auth() method to grad the current authenticated user
+          //auth()->user() will return the current sigend in user model
+          auth()->attempt($request->only('email', 'password'));
+
 
        return redirect()->route('dashboard');
        
