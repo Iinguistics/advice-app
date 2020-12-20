@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index(){
         //get() get all 
-        $posts = Post::paginate(6); //paginate takes in the argument, how many do you want to display per page..then on the view file under your foreach enter what your looping through then links() to automatically put tailwind paginate on the ui. {{ $posts->links() }}
+        $posts = Post::paginate(20); //paginate takes in the argument, how many do you want to display per page..then on the view file under your foreach enter what your looping through then links() to automatically put tailwind paginate on the ui. {{ $posts->links() }}
        
 
         return view('posts.index', [
